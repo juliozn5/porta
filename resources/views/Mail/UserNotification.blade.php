@@ -1,3 +1,3 @@
 <div>
-  No has iniciado sesion desde haces 30 dias 
+  No has iniciado sesion desde hace {{ $count }} dias 
 </div>

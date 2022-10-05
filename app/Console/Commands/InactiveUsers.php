@@ -49,9 +49,9 @@ class InactiveUsers extends Command
         $verify_days = $now->subDays(30);
 
         foreach($Users as $user ){
-            if ($user['last_session'] <=  $now){
+            if ($user['last_session'] <=   $verify_days && $now->diffInDays($user['last_session']) > 29 ){
                 Log::info(  $now->diffInDays($user['last_session'])); 
-               // Mail::to('juliozn5dev@gmail.com')->send(new SendMailable('id'));
+               Mail::to('juliozn5dev@gmail.com')->send(new SendMailable($now->diffInDays($user['last_session'])));
             }
         }
 
