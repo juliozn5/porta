@@ -49,6 +49,9 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        //se agrego 2 campos nuevos en la validacion del formulario de registro
+       ////////////////////////////////////////////////////////////////////////
+
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'foto'=> ['required','image'],
@@ -67,6 +70,9 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        //ruta donde se guardan las imagenes de perfil subidas por usuarios
+       ////////////////////////////////////////////////////////////////////
+       
         $ruta_foto = $data['foto']->store('photo-perfil','public');
       
         return User::create([

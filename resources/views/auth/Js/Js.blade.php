@@ -1,4 +1,6 @@
 <script>
+    //esta funcion permite mostras las imagenes seleccionadas por el usuario en el formulario
+   //////////////////////////////////////////////////////////////////////////////////////////
     function previewFile(input, preview_id) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
