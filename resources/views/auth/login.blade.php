@@ -12,7 +12,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <div class="col-md-12 mb-3 d-flex justify-content-center">
+                            <div class="col-sm-12 mb-3 d-flex justify-content-center">
                                 <img src="{{asset('logo/logo.png')}}"  style="width: 40%; ">
                             </div>
                             
@@ -53,7 +53,7 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-sm-12 ">
+                            <div class="col-md-12 ">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>

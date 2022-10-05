@@ -52,6 +52,8 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'foto'=> ['required','image'],
+            'phone'=> ['required', 'string', 'max:11'],
+            'code'=> ['required', 'string', 'max:4'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -66,10 +68,12 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $ruta_foto = $data['foto']->store('photo-perfil','public');
+      
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'photo'=> $ruta_foto,
+            'phone'=> '+'.$data['code'].$data['phone'],
             'password' => Hash::make($data['password']),
         ]);
     }

@@ -49,6 +49,48 @@
 
                         <div class="form-group row">
 
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text" id="basic-addon1">+</span>
+                                    </div>
+                                    <input 
+                                    type="number" 
+                                    name="code" 
+                                    class="form-control @error('code') is-invalid @enderror" 
+                                    name="code" 
+                                    value="{{ old('code') }}" 
+                                    required autocomplete="code" 
+                                    placeholder="Code">
+
+                                    @error('code')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                  </div>
+                            </div>
+                            <div class="col-md-8">
+                                <input 
+                                    name="phone" 
+                                    placeholder="Phone number" 
+                                    id="phone" 
+                                    type="number" 
+                                    class="form-control @error('phone') is-invalid @enderror" 
+                                    name="phone" 
+                                    value="{{ old('phone') }}" 
+                                    required autocomplete="email">
+
+                                @error('phone')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+
                             <div class="col-md-12">
                                 <input placeholder="Password" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
