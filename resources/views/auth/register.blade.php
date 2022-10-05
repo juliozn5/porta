@@ -17,8 +17,18 @@
                             
                             <div class="d-flex justify-content-center col-md-12">
                                 <div class="file-select zoom" id="photo" >
-                                    <input onchange="previewFile(this, 'photo_preview')" type="file" id="foto" name="foto" aria-label="Archivo">
+                                    
+                                    <input 
+                                        onchange="previewFile(this, 'photo_preview')" 
+                                        type="file" 
+                                        id="foto" 
+                                        name="foto" 
+                                        aria-label="Archivo"
+                                        class=" @error('foto') is-invalid @enderror" name="foto" value="{{ old('foto') }}" required autocomplete="foto" autofocus>
+
+                                        
                                 </div>
+                                
                             </div>
                             
                         </div>
