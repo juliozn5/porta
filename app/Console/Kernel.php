@@ -19,7 +19,7 @@ class Kernel extends ConsoleKernel
 
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('inactive:users')->everyMinute();
+        $schedule->command('inactive:users')->dailyAt('13:00');
     }
 
     /**
